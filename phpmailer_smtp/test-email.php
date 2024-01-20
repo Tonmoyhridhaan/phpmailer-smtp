@@ -1,7 +1,7 @@
 <?php
 include('smtp/PHPMailerAutoload.php');
 
-echo smtp_mailer('onecallsteamclean@gmail.com','Subject','Hello One Call');
+echo smtp_mailer('reciever email','Subject','main message');
 function smtp_mailer($to,$subject, $msg){
 	$mail = new PHPMailer(); 
 	$mail->IsSMTP(); 
@@ -12,9 +12,9 @@ function smtp_mailer($to,$subject, $msg){
 	$mail->IsHTML(true);
 	$mail->CharSet = 'UTF-8';
 	//$mail->SMTPDebug = 2; 
-	$mail->Username = "tonmoy.cse.ctg@gmail.com";
-	$mail->Password = "ekvz knwa viud jiik";
-	$mail->SetFrom("tonmoy.cse.ctg@gmail.com");
+	$mail->Username = "sender email";
+	$mail->Password = "sender email app password";
+	$mail->SetFrom("sender email");
 	$mail->Subject = $subject;
 	$mail->Body =$msg;
 	$mail->AddAddress($to);
